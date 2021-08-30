@@ -1,7 +1,5 @@
 package by.meshkov.autopark.entity.engine;
 
-import java.util.Objects;
-
 public abstract class AbstractEngine implements Startable {
     private String engineName;
     private double engineTaxCoefficient;

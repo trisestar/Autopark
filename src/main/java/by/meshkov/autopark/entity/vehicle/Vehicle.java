@@ -53,8 +53,6 @@ public class Vehicle implements Comparable<Vehicle> {
     public Vehicle(VehicleType type, String modelName, String registrationNumber, double weight, int manufactureYear, int mileage,
                    Color color, double tankVolume, AbstractEngine engine) throws NotVehicleException {
 
-        //todo стоит ли в конструктор пихать валидатор?
-
         if (TechnicalSpecialist.validateVehicleType(type) && TechnicalSpecialist.validateModelName(modelName) && TechnicalSpecialist.validateRegistrationNumber(registrationNumber) &&
                 TechnicalSpecialist.validateWeight(weight) && TechnicalSpecialist.validateManufactureYear(manufactureYear) && TechnicalSpecialist.validateMileage(mileage) &&
                 TechnicalSpecialist.validateColorString(getColor().name()) && TechnicalSpecialist.validateTankVolume(tankVolume) && TechnicalSpecialist.validateEngine(engine) ){
@@ -80,12 +78,16 @@ public class Vehicle implements Comparable<Vehicle> {
 
 
     public double getTotalIncome( ){
-        /// TODO: 8/29/2021
-        return 0;
+        double totalIncome = 0;
+        for (Rent rent :rentList){
+            totalIncome+=rent.getCost();
+        }
+
+        return totalIncome;
     }
 
     public double getTotalProfit( ){
-        //todo
+
         return getTotalIncome( ) - getCalcTaxPerMonth( );
 
     }

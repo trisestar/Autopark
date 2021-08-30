@@ -15,4 +15,11 @@ public class VehicleType {
     public VehicleType(int typeId) {
         this.typeId = typeId;
     }
+
+    @Override
+    public String toString() {
+        return typeId +
+                "," + typeName +
+                "," + taxCoefficient;
+    }
 }

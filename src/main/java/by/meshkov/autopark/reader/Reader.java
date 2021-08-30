@@ -25,8 +25,4 @@ public class Reader {
         return text;
     }
 
-    public static void main(String[] args) {
-        String str = readFile("src\\main\\resources\\vehicles.csv");
-        System.out.println(str);
-    }
 }
